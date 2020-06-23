@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.zj.cloudframe.zhenpin</groupId>
+		<artifactId>parent-service</artifactId>
+		<version>2.0.0-SNAPSHOT</version>
+		<relativePath>../../../module-parent/parent-service/pom.xml</relativePath>
+	</parent>
+
+	<artifactId>supplier-goods-service</artifactId>
+	<packaging>jar</packaging>
+
+	<name>supplier-goods-service</name>
+	<description>supplier-goods-service层</description>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.zj.cloudframe.zhenpin</groupId>
+			<artifactId>supplier-goods-dao</artifactId>
+			<version>${project-zhenpin.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.zj.cloudframe.zhenpin</groupId>
+			<artifactId>component-redis</artifactId>
+			<version>${project-zhenpin.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.zj.cloudframe.zhenpin</groupId>
+			<artifactId>shop-facade</artifactId>
+			<version>${project-zhenpin.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.zj.cloudframe.zhenpin</groupId>
+			<artifactId>base-facade</artifactId>
+			<version>${project-zhenpin.version}</version>
+		</dependency>
+<!-- spring security 认证组件 -->
+		<dependency>
+			<groupId>com.zj.cloudframe.zhenpin</groupId>
+			<artifactId>component-security</artifactId>
+			<version>${project-zhenpin.version}</version>
+		</dependency>
+        <!--<dependency>-->
+            <!--<groupId>com.github.pagehelper</groupId>-->
+            <!--<artifactId>pagehelper</artifactId>-->
+            <!--<version>5.1.8</version>-->
+            <!--<scope>compile</scope>-->
+        <!--</dependency>-->
+    </dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<mainClass>com.zj.zhenpin.SupplierGoodsApplication</mainClass>
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>repackage</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+</project>
